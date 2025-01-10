@@ -8,7 +8,7 @@ model PLL1phDemo "Single phase PLLs demo"
   parameter Frequency fnoise = 1e3 "noise frequency";
   parameter Real Vnoise = 10 "noise amplitude";
   
-  parameter Duration rise_time = 1/f0;
+  parameter Duration rise_time = 0.10;
   parameter AngularFrequency wn = 3.0 / rise_time;
   parameter Real xsi = 0.7;
   parameter Real kp = 2 * wn * xsi / V;
@@ -22,7 +22,7 @@ model PLL1phDemo "Single phase PLLs demo"
     Placement(transformation(origin = {-30, 0}, extent = {{-10, -10}, {10, 10}})));
   Modelica.Blocks.Sources.Cosine noise(amplitude = Vnoise, f = fnoise, phase = phi) annotation(
     Placement(transformation(origin = {-90, -30}, extent = {{-10, -10}, {10, 10}})));
-  Filters.PLLSOGI pllsogi(f0 = f0, kp = kp, Ti = kp/ki, kr = 500)  annotation(
+  Filters.PLLSOGI pllsogi(f0 = f0, kp = kp, Ti = kp/ki, kr = 1)  annotation(
     Placement(transformation(origin = {10, 0}, extent = {{-10, -10}, {10, 10}})));
   Modelica.Blocks.Continuous.Integrator phase(y_start = phi, y(unit="rad", displayUnit="deg"))  "true phase" annotation(
     Placement(transformation(origin = {-10, -70}, extent = {{-10, -10}, {10, 10}})));
@@ -43,5 +43,5 @@ equation
     Line(points = {{21, -6}, {30, -6}, {30, -50}, {46, -50}}, color = {0, 0, 127}));
   annotation(
     Diagram(graphics = {Text(origin = {0, 80}, extent = {{-100, 20}, {100, -20}}, textString = "Single-phase PLL demo")}),
-    experiment(StartTime = 0, StopTime = 0.04, Tolerance = 1e-06, Interval = 8.01603e-05));
+    experiment(StartTime = 0, StopTime = 0.1, Tolerance = 1e-06, Interval = 5e-05));
 end PLL1phDemo;

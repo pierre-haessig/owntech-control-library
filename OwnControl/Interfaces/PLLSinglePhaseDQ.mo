@@ -4,7 +4,7 @@ partial model PLLSinglePhaseDQ "Single phase PLL interface, using DQ (Park) tran
 extends PLL;
   Modelica.Blocks.Interfaces.RealInput u "single phase AC signal" annotation(
     Placement(transformation(origin = {-220, 0}, extent = {{-20, -20}, {20, 20}}), iconTransformation(origin = {-120, 0}, extent = {{-20, -20}, {20, 20}})));
-  Modelica.Blocks.Math.Gain flip(k = -1) "Vq sign flip" annotation(
+  Modelica.Blocks.Math.Gain flip(k = +1) "Vq sign flip. However, it seems that the sign should not be flipped!" annotation(
     Placement(transformation(origin = {10, 0}, extent = {{-10, -10}, {10, 10}})));
   Transforms.ClarkeDQ clarkeDQ annotation(
     Placement(transformation(origin = {-70, 0}, extent = {{-10, -10}, {10, 10}})));

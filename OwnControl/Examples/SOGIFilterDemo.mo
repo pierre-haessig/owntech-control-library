@@ -59,6 +59,6 @@ equation
     Line(points = {{22, -90}, {90, -90}, {90, -18}}, color = {0, 0, 127}));
   annotation(
     Diagram(graphics = {Text(origin = {0, 80}, extent = {{-100, 20}, {100, -20}}, textString = "SOGI filter demo
-(prefilter in the SOGI-PLL)")}),
+(used in SOGI-SFR PLL)")}),
     experiment(StartTime = 0, StopTime = 0.04, Tolerance = 1e-06, Interval = 8.01603e-05));
 end SOGIFilterDemo;

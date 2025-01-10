@@ -26,3 +26,11 @@ The `OwnControl` package is structured like many Modelica libraries with the fol
 ## About implementation
 
 The `OwnControl` library reuses interfaces and is compatible with the [Blocks](https://build.openmodelica.org/Documentation/Modelica.Blocks.html) library of the Modelica Standard Library (MSL) version 4.0.0
+
+## Development Status
+
+Early stage:
+
+- Transforms: OK and tested :white_check_mark:
+- PLL: Structure of abstract SRF and SOGI-SFR PLL probably OK, but not tested
+  - :warning: SOGI PLL demo fails

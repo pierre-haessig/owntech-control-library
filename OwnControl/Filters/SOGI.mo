@@ -1,6 +1,6 @@
 within OwnControl.Filters;
 
-model SOGI "SOGI quadrature signals system generator"
+model SOGI "SOGI-QSG filter (Quadrature Signal Generator)"
   extends Interfaces.TransformBlock;
   parameter Real kr=sqrt(2) "resonance damping factor";
   Modelica.Blocks.Interfaces.RealInput u "single phase AC signal" annotation(

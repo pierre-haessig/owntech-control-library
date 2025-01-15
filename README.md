@@ -17,10 +17,9 @@ Requirements: you need a Modelica simulation environment.
 The `OwnControl` package is structured like many Modelica libraries with the following subpackages:
 
 - **Examples**: demos of filters and control loops that can be directly simulated
-- **Components**: models of subsystems (i.e. that cannot be simulated alone), including:
-  - TWIST board
-  - Power converter legs (switched or averaged model)
-  - LC filter
+- **Filters** blocks, including PLLs
+- **Transforms** blocks: Clarke αβ and Park dq
+- (**Utilities**)
 - **Interfaces** (not needed by model users): [parent](https://mbe.modelica.university/behavior/equations/model_def/#inheritance) abstract/partial model classes that are used to factor out common aspects from sibling components
 
 ## About implementation
@@ -32,5 +31,25 @@ The `OwnControl` library reuses interfaces and is compatible with the [Blocks](h
 Early stage:
 
 - Transforms: OK and tested :white_check_mark:
-- PLL: Structure of abstract SRF and SOGI-SFR PLL probably OK, but not tested
-  - :warning: SOGI PLL demo fails
+- SOGI filter OK
+- PLL: Single phase SOGI-SFR PLL OK and  tested
+  - :warning: but with differences to the Jan 2025 Hackathon implementation: Vq sign flip removed + slower + much lower kr
+
+## About the SOGI-QSG filter
+
+(QSG : quadrature signal generator ?)
+
+See `Examples.SOGIFilterDemo` for a demo of the of SOGI filter ability to:
+
+- **generate Clarke αβ components** from a single phase signal:  α component ≈ sinusoidal input while β component is the same signal lagging by 90°
+- **filter out** high frequency noise (and low frequency as well: it is a band-pass filter)
+
+### SOGI filter tuning: kr gain
+
+The SOGI filter is tuned by a `kr` resonance damping gain which should be on the order of 1.0
+
+- small gain implies slow response, but high noise rejection
+- high gain implies fast response, but low noise rejection
+  - and also, perhaps non intuively, the low noise rejection also means that the filter is slow to reject DC offsets, and indeed the fast startup transient with high kr creates an offset on the β component. With higher kr, this offset is smaller, but takes *longer to vanish!*
+
+![SOGI QSG filter generator on 50 Hz signal + high frequency noise. Animation of kr gain set from 0.50 to 50](figures/png/sogi_kr_anim-0.5-50.gif)

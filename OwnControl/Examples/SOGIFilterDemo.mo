@@ -58,7 +58,7 @@ equation
   connect(v_quad.y, cmp_beta.u2) annotation(
     Line(points = {{22, -90}, {90, -90}, {90, -18}}, color = {0, 0, 127}));
   annotation(
-    Diagram(graphics = {Text(origin = {0, 80}, extent = {{-100, 20}, {100, -20}}, textString = "SOGI filter demo
-(used in SOGI-SFR PLL)")}),
+    Diagram(graphics = {Text(origin = {0, 80}, extent = {{-100, 20}, {100, -20}}, textString = "SOGI-QSG* filter demo
+(used in SOGI-SFR PLL)"), Text(origin = {-50, -110}, extent = {{-50, 10}, {50, -10}}, textString = "*QSG: Quadrature Signal Generator")}),
     experiment(StartTime = 0, StopTime = 0.04, Tolerance = 1e-06, Interval = 8.01603e-05));
 end SOGIFilterDemo;

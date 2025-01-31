@@ -21,7 +21,7 @@ partial model PLL "PLL interface with PI loop filter"
     Placement(transformation(origin = {50, -50}, extent = {{-10, -10}, {10, 10}})));
   Modelica.Blocks.Math.Add add annotation(
     Placement(transformation(origin = {110, 0}, extent = {{-10, -10}, {10, 10}})));
-  Modelica.Blocks.Continuous.PI loopFilterPI(k = kp, T = Ti)  annotation(
+  Modelica.Blocks.Continuous.PI loopFilterPI(k = kp, T = Ti, initType = Modelica.Blocks.Types.Init.InitialState, x_start = 0)  annotation(
     Placement(transformation(origin = {50, 0}, extent = {{-10, -10}, {10, 10}})));
 equation
   connect(w2f.y, f) annotation(

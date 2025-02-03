@@ -58,5 +58,7 @@ equation
 
 annotation(
     Icon(graphics = {Text(origin = {-40, 60}, extent = {{-50, 20}, {50, -20}}, textString = "1φ"), Text(origin = {30, -60}, extent = {{-50, 20}, {50, -20}}, textString = "αβ"), Text(extent = {{-100, 20}, {100, -20}}, textString = "kr=%kr")}),
-  Diagram(coordinateSystem(extent = {{-100, -100}, {160, 100}})));
+  Diagram(coordinateSystem(extent = {{-100, -100}, {160, 100}})),
+  Documentation(info = "<html><head></head><body>See <a href=\"modelica://OwnControl/Examples/SOGIFilterDemo.mo\">Examples/SOGIFilterDemo</a> example. Effect of kr gain:<div><img src=\"modelica://OwnControl/Resources/Images/sogi_kr_anim-0.5-50.gif\"></div></body>
+  </html>"));
 end SOGI;

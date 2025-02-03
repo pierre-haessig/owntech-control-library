@@ -34,6 +34,6 @@ equation
   connect(v.y, pll.u) annotation(
     Line(points = {{-39, 0}, {-2, 0}}, color = {0, 0, 127}));
   annotation(
-    Diagram(graphics = {Text(origin = {0, 80}, extent = {{-100, 20}, {100, -20}}, textString = "Single-phase PLL demo"), Text(origin = {-46, 30}, extent = {{-34, 10}, {34, -10}}, textString = "perturbed cosine voltage to be tracked")}),
+    Diagram(graphics = {Text(origin = {0, 80}, extent = {{-100, 20}, {100, -20}}, textString = "Single-phase PLL demo"), Text(origin = {-50, 30}, extent = {{-50, 10}, {50, -10}}, textString = "perturbed sigle phase voltage to be tracked")}),
     experiment(StartTime = 0, StopTime = 0.2, Tolerance = 1e-06, Interval = 5e-05));
 end PLL1phDemo;

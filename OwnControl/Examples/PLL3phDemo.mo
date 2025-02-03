@@ -22,7 +22,7 @@ model PLL3phDemo"Single phase PLLs demo"
     Placement(transformation(origin = {-10, -70}, extent = {{-10, -10}, {10, 10}})));
   Modelica.Blocks.Math.Feedback phase_err(y(unit="rad", displayUnit="deg")) "estimate - true phase" annotation(
     Placement(transformation(origin = {50, 0}, extent = {{-10, -10}, {10, 10}})));
-  Utilities.CosinePerturbed3ph v_abc(amplitude = V, f = f0, phase_a = phi)  "perturbed three phase cosine voltage to be tracked" annotation(
+  Utilities.CosinePerturbed3ph v_abc(amplitude = V, f = f0, phase_a = phi, n_odd = 2, amplitudes_odd_rel = {0.03, 0.03}, phases_odd = {3.141592653589793, 3.141592653589793}, harmonics = false, amplitude_hf_rel = Vnoise_rel, f_hf = fnoise)  "perturbed three phase cosine voltage to be tracked" annotation(
     Placement(transformation(origin = {-50, 0}, extent = {{-10, -10}, {10, 10}})));
 equation
   connect(phase.u, w0.y) annotation(

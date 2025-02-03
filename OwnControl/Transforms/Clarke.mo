@@ -2,7 +2,7 @@ within OwnControl.Transforms;
 
 model Clarke "Three phase to Alpha-Beta (Clarke) transform"
   extends OwnControl.Interfaces.TransformBlock;
-  Modelica.Blocks.Interfaces.RealInput abc[3] "three phase AC" annotation(
+  Modelica.Blocks.Interfaces.RealInput abc[3] "three phase AC signal" annotation(
     Placement(transformation(origin = {-120, 0}, extent = {{-20, -20}, {20, 20}}), iconTransformation(origin = {-120, 0}, extent = {{-20, -20}, {20, 20}})));
   Modelica.Blocks.Interfaces.RealOutput ab[2] "alpha-beta" annotation(
     Placement(transformation(origin = {120, 0}, extent = {{-20, -20}, {20, 20}}), iconTransformation(origin = {120, 0}, extent = {{-20, -20}, {20, 20}})));

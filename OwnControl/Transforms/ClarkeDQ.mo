@@ -2,9 +2,9 @@ within OwnControl.Transforms;
 
 model ClarkeDQ "Alpha-Beta (Clarke) to DQ (Park) transform"
 extends Interfaces.TransformPhaseBlock;
-  Modelica.Blocks.Interfaces.RealInput ab[2] "alpha-beta input" annotation(
+  Modelica.Blocks.Interfaces.RealInput ab[2] "alpha-beta signal" annotation(
     Placement(transformation(origin = {-120, 0}, extent = {{-20, -20}, {20, 20}}), iconTransformation(origin = {-120, 0}, extent = {{-20, -20}, {20, 20}})));
-  Modelica.Blocks.Interfaces.RealOutput dq[2] "dq output" annotation(
+  Modelica.Blocks.Interfaces.RealOutput dq[2] "dq signal" annotation(
     Placement(transformation(origin = {120, 0}, extent = {{-20, -20}, {20, 20}}), iconTransformation(origin = {120, 0}, extent = {{-20, -20}, {20, 20}})));
 equation
   dq[1] =  ab[1] * cos_theta + ab[2] * sin_theta;

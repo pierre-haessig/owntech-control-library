@@ -2,9 +2,9 @@ within OwnControl.Transforms;
 
 model Park "Three phase to DQ (Park) transform"
 extends Interfaces.TransformPhaseBlock;
-  Modelica.Blocks.Interfaces.RealInput abc[3] "three phase AC input" annotation(
+  Modelica.Blocks.Interfaces.RealInput abc[3] "three phase AC signal" annotation(
     Placement(transformation(origin = {-120, 0}, extent = {{-20, -20}, {20, 20}}), iconTransformation(origin = {-120, 0}, extent = {{-20, -20}, {20, 20}})));
-  Modelica.Blocks.Interfaces.RealOutput dq[2] "dq output" annotation(
+  Modelica.Blocks.Interfaces.RealOutput dq[2] "dq signal" annotation(
     Placement(transformation(origin = {120, 0}, extent = {{-20, -20}, {20, 20}}), iconTransformation(origin = {120, 0}, extent = {{-20, -20}, {20, 20}})));
   Clarke clarke annotation(
     Placement(transformation(origin = {-50, 0}, extent = {{-10, -10}, {10, 10}})));

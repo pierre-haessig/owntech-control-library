@@ -2,6 +2,7 @@ package OwnControl "OwnTech Signal processing & Control library for power electr
 extends Modelica.Icons.Package;
 import Modelica.Constants.pi;
 import Modelica.Units.SI.{Angle, Frequency, AngularFrequency, Duration};
+import Modelica.Units.SI.{Voltage, Current, Resistance, Capacitance, Inductance};
 
 annotation(
     uses(Modelica(version = "4.0.0")),

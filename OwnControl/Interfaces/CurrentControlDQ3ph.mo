@@ -1,6 +1,6 @@
 within OwnControl.Interfaces;
 
-partial model CurrentControl3ph "Interface for three phase AC current controller with dq references"
+partial model CurrentControlDQ3ph "Interface for three phase AC current controller with dq references"
 extends Modelica.Blocks.Icons.Block;
 
   Modelica.Blocks.Interfaces.RealInput ph "phase" annotation(
@@ -16,6 +16,8 @@ extends Modelica.Blocks.Icons.Block;
 equation
 
   annotation(
-    Icon(graphics = {Text(extent = {{-100, 50}, {100, -50}}, textString = "I ctrl")}),
+    Icon(graphics = {Text(extent = {{-100, 70}, {100, -70}}, textString = "I dq
+ctrl
+3φ")}),
   Diagram(coordinateSystem(extent = {{-150, -100}, {150, 100}})));
-end CurrentControl3ph;
+end CurrentControlDQ3ph;

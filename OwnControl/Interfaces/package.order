@@ -1,4 +1,5 @@
-CurrentControl3ph
+CurrentControlDQ
+CurrentControlDQ3ph
 TransformBlock
 TransformPhaseBlock
 PLL

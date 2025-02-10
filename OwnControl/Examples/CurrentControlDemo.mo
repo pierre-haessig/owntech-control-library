@@ -16,7 +16,7 @@ model CurrentControlDemo
   parameter Duration Tstep(displayUnit = "ms") = 20e-3 "Id,Iq set point step instant";
   parameter Current Id_sp = 1 "Id set point after Tstep";
   parameter Current Iq_sp = 1 "Iq set point after Tstep";
-  Controllers.CurrentControlDQ3ph currentControlDQ3ph(f0 = 50, kp = kp, Ti = Ti, L = L, Vg = Vg, Vmax = Vmax) annotation(
+  Controllers.CurrentControlDQ3ph currentControlDQ3ph(f0 = f0, kp = kp, Ti = Ti, L = L, Vg = Vg, Vmax = Vmax) annotation(
     Placement(transformation(origin = {-50, 0}, extent = {{-10, -10}, {10, 10}})));
   Modelica.Blocks.Continuous.TransferFunction tfZa(b = {1}, a = {L, R}, initType = Modelica.Blocks.Types.Init.InitialState) "grid connection impedance, phase a" annotation(
     Placement(transformation(origin = {70, 30}, extent = {{-10, -10}, {10, 10}})));

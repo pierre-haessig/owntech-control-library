@@ -17,6 +17,7 @@ Requirements: you need a Modelica simulation environment.
 The `OwnControl` package contains the following subpackages:
 
 - **Examples**: demos of filters and control loops that can be directly simulated
+- **Controllers**: AC current controller (in dq reference frame)
 - **Filters** blocks, including PLLs (single phase SOGI, three phase SRF)
 - **Transforms** blocks: Clarke αβ and Park dq
 - **Utilities**: single/three phase signal generators, including harmonics

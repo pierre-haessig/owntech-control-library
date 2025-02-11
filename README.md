@@ -33,10 +33,21 @@ The `OwnControl` library reuses interfaces and is compatible with the [Blocks](h
 
 Early stage:
 
+- Controllers: DQ current control OK and tested :white_check_mark:
 - Transforms: OK and tested :white_check_mark:
 - SOGI filter OK
 - PLLs: Single phase SOGI-SRF PLL OK and  tested, Three phase SRF PLL OK
   - :warning: but with differences to the Jan 2025 Hackathon implementation:  SOGI-SRF PLL only works with slower control loop (100 ms instead of 20 ms) and much lower kr (unstable with kr=500 like in the embedded code)
+
+## DQ current control
+
+Alternating current control in the DQ (Synchronous) reference frame with two PI controllers:
+
+![CurrentControlDQ](OwnControl/Resources/Images/CurrentControlDQ.png)
+
+Demo of alternating current control with closed loop time constant Tci=2ms (from `Examples.CurrentControlDemo` model):
+
+![CurrentControlDemo_plot_Tci2ms](OwnControl/Resources/Images/CurrentControlDemo_plot_Tci2ms.png)
 
 ## About the SOGI-QSG filter
 

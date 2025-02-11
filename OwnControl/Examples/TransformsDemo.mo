@@ -11,11 +11,11 @@ model TransformsDemo "Three-phase to Clarke/Park demo"
     Placement(transformation(origin = {30, 0}, extent = {{-10, -10}, {10, 10}})));
   Modelica.Blocks.Sources.Constant f(k = f0) annotation(
     Placement(transformation(origin = {-90, -90}, extent = {{-10, -10}, {10, 10}})));
-  Modelica.Blocks.Continuous.Integrator integrator(k = 2*pi) annotation(
+  Modelica.Blocks.Continuous.Integrator phase(k = 2*pi) annotation(
     Placement(transformation(origin = {-50, -90}, extent = {{-10, -10}, {10, 10}})));
   Transforms.Park park annotation(
     Placement(transformation(origin = {-10, -30}, extent = {{-10, -10}, {10, 10}})));
-  Utilities.CosinePerturbed3ph v_abc(phase_a = phi, amplitude = V, f = f0, n_odd = 2, harmonics = false, amplitudes_odd_rel = {0.03, 0.03}, phases_odd = {3.141592653589793, 3.141592653589793}) annotation(
+  Utilities.CosinePerturbed3ph v_abc(amplitude_a = V, f = f0, phase_a = phi, n_odd = 2, harmonics = false, amplitudes_odd_rel = {0.03, 0.03}, phases_odd = {3.141592653589793, 3.141592653589793}, amplitude_b = V, amplitude_c = V) annotation(
     Placement(transformation(origin = {-90, 0}, extent = {{-10, -10}, {10, 10}})));
   Transforms.InvClarke invClarke annotation(
     Placement(transformation(origin = {30, 50}, extent = {{-10, -10}, {10, 10}})));
@@ -26,11 +26,11 @@ model TransformsDemo "Three-phase to Clarke/Park demo"
 equation
   connect(clarke.ab, clarkeDQ.ab) annotation(
     Line(points = {{-18, 0}, {18, 0}}, color = {0, 0, 127}, thickness = 0.5));
-  connect(f.y, integrator.u) annotation(
+  connect(f.y, phase.u) annotation(
     Line(points = {{-79, -90}, {-63, -90}}, color = {0, 0, 127}));
-  connect(park.ph, integrator.y) annotation(
+  connect(park.ph, phase.y) annotation(
     Line(points = {{-10, -42}, {-10, -90}, {-39, -90}}, color = {0, 0, 127}));
-  connect(integrator.y, clarkeDQ.ph) annotation(
+  connect(phase.y, clarkeDQ.ph) annotation(
     Line(points = {{-39, -90}, {30, -90}, {30, -12}}, color = {0, 0, 127}));
   connect(v_abc.abc, clarke.abc) annotation(
     Line(points = {{-79, 0}, {-42, 0}}, color = {0, 0, 127}, thickness = 0.5));
@@ -42,9 +42,9 @@ equation
     Line(points = {{42, 0}, {58, 0}}, color = {0, 0, 127}, thickness = 0.5));
   connect(park.dq, invPark.dq) annotation(
     Line(points = {{2, -30}, {38, -30}}, color = {0, 0, 127}, thickness = 0.5));
-  connect(integrator.y, invClarkeDQ.ph) annotation(
+  connect(phase.y, invClarkeDQ.ph) annotation(
     Line(points = {{-38, -90}, {70, -90}, {70, -12}}, color = {0, 0, 127}));
-  connect(integrator.y, invPark.ph) annotation(
+  connect(phase.y, invPark.ph) annotation(
     Line(points = {{-38, -90}, {50, -90}, {50, -42}}, color = {0, 0, 127}));
   annotation(
     experiment(StartTime = 0, StopTime = 0.04, Tolerance = 1e-06, Interval = 8.01603e-05),

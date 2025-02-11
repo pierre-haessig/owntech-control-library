@@ -1,6 +1,6 @@
 within OwnControl.Interfaces;
 
-partial model CurrentControlDQ3ph "Interface for three phase AC current controller with dq references"
+partial model CurrentControlDQ3ph "Interface for three-phase AC current controller with dq references"
 extends Modelica.Blocks.Icons.Block;
 
   Modelica.Blocks.Interfaces.RealInput ph "phase" annotation(

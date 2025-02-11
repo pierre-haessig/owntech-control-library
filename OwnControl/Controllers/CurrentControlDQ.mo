@@ -74,7 +74,7 @@ equation
     Line(points = {{-38, -40}, {40, -40}, {40, -36}, {58, -36}}, color = {0, 0, 127}));
   annotation(
     Diagram(graphics = {Text(origin = {-142, -40}, extent = {{-6, 8}, {6, -8}}, textString = "id_m
-iq_m"), Rectangle(origin = {-140, -40}, extent = {{-10, 10}, {10, -10}}), Text(origin = {10, 90}, extent = {{-110, 10}, {110, -10}}, textString = "AC current controller in DQ reference frame"), Rectangle(origin = {10, -1}, lineColor = {38, 162, 105}, pattern = LinePattern.Dash, extent = {{-34, 33}, {34, -33}}), Text(origin = {10, 27}, textColor = {38, 162, 105}, extent = {{-34, 5}, {34, -5}}, textString = "dq channels Lw decoupling")}));
+iq_m"), Rectangle(origin = {-140, -40}, extent = {{-10, 10}, {10, -10}}), Text(origin = {0, 90}, extent = {{-140, 10}, {140, -10}}, textString = "AC current controller in DQ reference frame"), Rectangle(origin = {10, -1}, lineColor = {38, 162, 105}, pattern = LinePattern.Dash, extent = {{-34, 33}, {34, -33}}), Text(origin = {10, 27}, textColor = {38, 162, 105}, extent = {{-34, 5}, {34, -5}}, textString = "dq channels Lw decoupling")}));
 
 
 end CurrentControlDQ;

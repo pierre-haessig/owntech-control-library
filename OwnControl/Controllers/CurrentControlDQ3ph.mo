@@ -41,5 +41,6 @@ equation
   annotation(
     Diagram(graphics = {Text(origin = {-92, -52}, extent = {{-6, 8}, {6, -8}}, textString = "id_m
 iq_m"), Rectangle(origin = {-90, -52}, extent = {{-10, 10}, {10, -10}}), Text(origin = {0, 80}, extent = {{-140, 20}, {140, -20}}, textString = "AC current controller in DQ reference frame
-with three phase interfacing")}));
+with three phase interfacing")}),
+  Icon);
 end CurrentControlDQ3ph;

@@ -13,6 +13,6 @@ equation
 
   annotation(
     Icon(graphics = {Text(extent = {{-100, 50}, {100, -50}}, textString = "I dq
-ctrl")}),
+ctrl"), Text(origin = {-120, 80}, textColor = {0, 0, 127}, extent = {{-20, 20}, {20, -20}}, textString = "dq", horizontalAlignment = TextAlignment.Left), Text(origin = {-120, 0}, textColor = {0, 0, 127}, extent = {{-20, 20}, {20, -20}}, textString = "dq", horizontalAlignment = TextAlignment.Left)}),
   Diagram(coordinateSystem(extent = {{-150, -100}, {150, 100}})));
 end CurrentControlDQ;

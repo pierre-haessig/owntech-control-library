@@ -18,6 +18,6 @@ equation
   annotation(
     Icon(graphics = {Text(extent = {{-100, 70}, {100, -70}}, textString = "I dq
 ctrl
-3φ")}),
+3φ"), Text(origin = {-120, 0}, textColor = {0, 0, 127}, extent = {{-20, 20}, {20, -20}}, textString = "3φ", horizontalAlignment = TextAlignment.Left), Text(origin = {-120, 80}, textColor = {0, 0, 127}, extent = {{-20, 20}, {20, -20}}, textString = "dq", horizontalAlignment = TextAlignment.Left)}),
   Diagram(coordinateSystem(extent = {{-150, -100}, {150, 100}})));
 end CurrentControlDQ3ph;

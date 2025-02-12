@@ -13,10 +13,9 @@ model PLL3phDemo"Single phase PLLs demo"
   parameter Real xsi = 0.7;
   parameter Real kp = 2 * wn * xsi / V;
   parameter Real ki = (wn * wn) /V;
-  parameter Real kr = 1;
   Modelica.Blocks.Sources.Constant w0(k = 2*pi*f0) "nominal angular frequency" annotation(
     Placement(transformation(origin = {-50, -70}, extent = {{-10, -10}, {10, 10}})));
-  Filters.SRFPLL3ph pll(f0 = f0, kp = kp, Ti = kp/ki, kr = kr)  "PLL under test" annotation(
+  Filters.SRFPLL3ph pll(f0 = f0, kp = kp, Ti = kp/ki)  "PLL under test" annotation(
     Placement(transformation(origin = {10, 0}, extent = {{-10, -10}, {10, 10}})));
   Modelica.Blocks.Continuous.Integrator phase(y_start = phi, y(unit="rad", displayUnit="deg"))  "true phase" annotation(
     Placement(transformation(origin = {-10, -70}, extent = {{-10, -10}, {10, 10}})));

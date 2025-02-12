@@ -2,7 +2,6 @@ within OwnControl.Filters;
 
 model SRFPLL3ph "Three phase SRF-PLL"
   extends Interfaces.PLL3ph;
-  parameter Real kr=sqrt(2) "SOGI filter resonance damping factor";
   Modelica.Blocks.Routing.DeMultiplex2 deMuxDQ annotation(
     Placement(transformation(origin = {-30, 0}, extent = {{-10, -10}, {10, 10}})));
   Transforms.Park park annotation(

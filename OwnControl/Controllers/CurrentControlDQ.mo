@@ -3,7 +3,7 @@ within OwnControl.Controllers;
 model CurrentControlDQ "AC current controller using PIs in DQ reference frame"
   extends Interfaces.CurrentControlDQ;
   
-  parameter Real kp "PI proportional gain";
+  parameter Resistance kp "PI proportional gain";
   parameter Duration Ti "PI integrator time constant";
   parameter Voltage Vmax(min=Vg) "Maximum inverter voltage amplitude (for PI saturation)";
   parameter Voltage Vg "Grid voltage amplitude estimate (for Vd feedforward)";
@@ -15,9 +15,9 @@ model CurrentControlDQ "AC current controller using PIs in DQ reference frame"
     Placement(transformation(origin = {-130, 40}, extent = {{-10, -10}, {10, 10}})));
   Modelica.Blocks.Routing.Multiplex2 mux_vdq annotation(
     Placement(transformation(origin = {110, 0}, extent = {{-10, -10}, {10, 10}})));
-  Modelica.Blocks.Continuous.LimPID PID_d(Td = 0, initType = Modelica.Blocks.Types.Init.InitialState, k = kp, Ti = Ti, withFeedForward = true, yMax = Vmax)  annotation(
+  Modelica.Blocks.Continuous.LimPID PID_d(Td = 0, initType = Modelica.Blocks.Types.Init.InitialState, k(unit="Ohm") = kp, Ti = Ti, withFeedForward = true, yMax = Vmax, gainPID.k(unit="Ohm"))  annotation(
     Placement(transformation(origin = {-50, 40}, extent = {{-10, -10}, {10, 10}})));
-  Modelica.Blocks.Continuous.LimPID PID_q(Td = 0, Ti = Ti, initType = Modelica.Blocks.Types.Init.InitialState, k = kp, yMax = Vmax) annotation(
+  Modelica.Blocks.Continuous.LimPID PID_q(Td = 0, Ti = Ti, initType = Modelica.Blocks.Types.Init.InitialState, k(unit="Ohm") = kp, yMax = Vmax, gainPID.k(unit="Ohm")) annotation(
     Placement(transformation(origin = {-50, -40}, extent = {{-10, -10}, {10, 10}})));
   Modelica.Blocks.Math.Add add_Lwd annotation(
     Placement(transformation(origin = {70, 30}, extent = {{-10, -10}, {10, 10}})));

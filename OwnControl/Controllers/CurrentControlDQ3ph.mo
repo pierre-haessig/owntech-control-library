@@ -3,7 +3,7 @@ within OwnControl.Controllers;
 model CurrentControlDQ3ph "three phase AC current controller using PIs in DQ reference frame"
   extends Interfaces.CurrentControlDQ3ph;
      
-  parameter Real kp "PI proportional gain";
+  parameter Resistance kp "PI proportional gain";
   parameter Duration Ti "PI integrator time constant";
   parameter Voltage Vmax(min=Vg) "Maximum inverter voltage amplitude (for PI saturation)";
   parameter Voltage Vg "Grid voltage amplitude estimate (for Vd feedforward)";
